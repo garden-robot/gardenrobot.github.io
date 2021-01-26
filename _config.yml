@@ -6,7 +6,7 @@ keywords: "your keywords, separated by commas"
 skills: "Web Developer - Graphic Artist - User Experience Designer"
 meta_author: LastName FirstName
 baseurl: "/gardenrobot.github.io"
-url: "localhost:4000"
+url: "https://garden-robot.github.io"
 
 # Google webmaster tools
 google_verify:
