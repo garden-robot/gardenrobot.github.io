@@ -17,7 +17,7 @@ title: "Hi, I'm Jude (but you can call me garden robot)."
 email: 'jude.pinto@nyu.edu'
 description: "I'm a programmer and game designer who loves to create curious interactions"
 baseurl: "/programmingportfolio" # the subpath of your site, e.g. /blog
-url: "https://garden-robot.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://garden-robot.github.io" # the base hostname & protocol for your site, e.g. https://example.com
 twitter_username: 'garden_robot'
 github_username: 'garden-robot'
 
