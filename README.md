@@ -1,73 +1,98 @@
-# Forty - Jekyll Theme
+## Phantom for Jekyll
 
-A Jekyll version of the "Forty" theme by [HTML5 UP](https://html5up.net/).  
+A minimalist, responsive portfolio theme for [Jekyll](http://jekyllrb.com/) with Bootstrap.
 
-![Forty Theme](assets/images/forty.jpg "Forty Theme")
+![preview](preview.jpg)
 
-# How to Use
+[See it in action](http://jamigibbs.github.io/phantom/).
 
-For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details, 
-or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/), 
-and [creating pages](https://jekyllrb.com/docs/pages/).
+## Fancy using it for your own site?
 
-- **GitLab**: Simply fork this repository and start editing the `_config.yml` file!  
-- **GitHub**: Fork this repository and create a branch named `gh-pages`, then start editing the `_config.yml` file.
+Here are some steps to get you started:
 
-# Added Features
+1. Clone this repo and cd into the directory:
 
-* **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
-* Use `_config.yml` to **set whether the homepage tiles should pull pages or posts**, as well as how many to display.
-* Add your **social profiles** easily in `_config.yml`. Only social profiles buttons you enter in `config.yml` show up on the site footer!
-* Set **featured images** in front matter.
+  ```bash
+  git clone https://github.com/jamigibbs/phantom.git your-dir-name && cd your-dir-name
+  ```
 
-# Issues
+2. Run:
 
-If you would like to report a bug, ask a question, request a feature, feel free to do so on [the GitLab repository](https://gitlab.com/andrewbanchich/forty-jekyll-theme) and I will be more than happy to help!
+  ```bash
+  gem install bundler
+  bundle install
+  bundle exec jekyll serve
+  ```
 
-Alternatively, you can open an issue via email by emailing [incoming+andrewbanchich/forty-jekyll-theme@incoming.gitlab.com](mailto:incoming+andrewbanchich/forty-jekyll-theme@incoming.gitlab.com).
+  You may need to append your commands with `sudo` if you're getting a permissions error.
 
-The GitHub repository is simply a mirror of the GitLab repository.
+  _Don't have Jekyll yet? [Get `er installed then!](http://jekyllrb.com/docs/installation/)_
 
-# Credits
+3. Visit in your browser at:
 
-Original README from HTML5 UP:
+  `http://127.0.0.1:4000`
 
-```
-Forty by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+## Launching with Github Pages :rocket:
 
+Jekyll + Github pages is a marriage made in heaven. You can [use your own custom domain name](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/) or use the default Github url (ie. http://username.github.io/repository) and not bother messing around with DNS settings.
 
-This is Forty, my latest and greatest addition to HTML5 UP and, per its incredibly
-creative name, my 40th (woohoo)! It's built around a grid of "image tiles" that are
-set up to smoothly transition to secondary landing pages (for which a separate page
-template is provided), and includes a number of neat effects (check out the menu!),
-extra features, and all the usual stuff you'd expect. Hope you dig it!
+## Theme Features
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+### Navigation
 
-(* = not included)
+Navigation can be customized in `_config.yml` under the `nav_item` key. Default settings:
 
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		background-size polyfill (github.com/louisremi)
-		Misc. Sass functions (@HugoGiraudel)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
+```yaml
+nav_item:
+    - { url: '/', text: 'Home' }
+    - { url: '/about', text: 'About' }
 ```
 
-Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
+Set the `nav_enable` variable to false in `_config.yml` to disable navigation.
+
+### Contact Form
+
+You can display a contact form within the modal window template. This template is already setup to use the [Formspree](https://formspree.io) email system. You'll just want to add your email address to the form in `/_includes/contact-modal.html`.
+
+Place the modal window template in any place you'd like the user to click for the contact form.
+The template will display a link to click for the contact form modal window:
+
+```liquid
+{% include contact.html %}
+{% include contact-modal.html %}
+```
+
+### Animation Effects
+
+Animations with CSS classes are baked into the theme. To animate a section or element, simply add the animation classes:
+
+```html
+<div id="about-me" class="wow fadeIn">
+  I'm the coolest!
+</div>
+```
+
+For a complete list of animations, see the [animation list](http://daneden.github.io/animate.css/).
+
+### Pagination
+
+By default, pagination on the home page will activate after 10 posts. You can change this within `_config.yml`. You can add the pagination to other layouts with:
+
+```liquid
+  {% for post in paginator.posts %}
+    {% include post-content.html %}
+  {% endfor %}
+
+  {% include pagination.html %}
+```
+
+Read more about the [pagination plugin](http://jekyllrb.com/docs/pagination/).
+
+## Credit
+
+* Bootstrap, http://getbootstrap.com/, (C) 2011 - 2016 Twitter, Inc., [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+* Wow, https://github.com/matthieua/WOW, (C) 2014 - 2016 Matthieu Aussaguel
+, [GPL](https://github.com/matthieua/WOW#open-source-license)
+
+* Animate.css, https://github.com/daneden/animate.css, (C) 2016 Daniel Eden, [MIT](https://github.com/daneden/animate.css/blob/master/LICENSE)
