@@ -19,7 +19,7 @@ description: "I'm a programmer and game designer who loves to create curious int
 baseurl: "gardenrobot.github.io" # the subpath of your site, e.g. /blog
 url: "https://garden-robot.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
 twitter_username: 'garden_robot'
-github_username: 'gardenrobot'
+github_username: 'garden-robot'
 
 
 # Build settings
